@@ -1,0 +1,57 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Archivo Black", sans-serif;
+}
+
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+height: 100vh;
+width: 100vw;
+position: relative;
+}
+
+.login-card{
+  width: 450px;
+  height: 450px;
+  /* background-color: aqua; */
+  position: relative;
+}
+
+.guy-container{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.guy-image{
+  width: 380px;
+}
+
+.btn-container{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.arrow-for-next{
+  fill: #fff;
+  stroke: #fff;
+  width: 40px;
+}
+input{
+  outline: none; /* Remove the default outline */
+  border-color: black; /* Change border color to black */
+  border: 1px solid black !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5) !important; /* Black shadow */
+  border-color: black; /* Change border color to black */
+}
