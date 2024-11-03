@@ -35,7 +35,7 @@
 
     </div>
     <div class="user-item">
-      <p>Username</p>
+      <p id="usernameDisplay"></p>
     </div>
 
   </div>
@@ -45,20 +45,20 @@
       <div class="row num-container">
         <div class="col-6">
           <div class="input-group mb-3 num-input">
-            <input type="number" class="form-control" placeholder="#" aria-label="firstnumber"
+            <input type="number" id="firstnumber" class="form-control" placeholder="#1" aria-label="firstnumber"
               aria-describedby="firstnumber">
           </div>
         </div>
         <div class="col-6">
           <div class="input-group mb-3 num-input">
-            <input type="number" class="form-control" placeholder="#" aria-label="secondnumber"
+            <input type="number" id="secondnumber" class="form-control" placeholder="#2" aria-label="secondnumber"
               aria-describedby="secondnumber">
           </div>
         </div>
       </div>
       <div class="row op-container mt-3">
         <div class="col-3 op">
-          <button type="button" class="btn btn-dark">
+          <button type="button" class="btn btn-dark operation" data-operation="add">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="op-symbol">
               <path fill-rule="evenodd"
                 d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
@@ -69,7 +69,7 @@
 
         </div>
         <div class="col-3 op ">
-          <button type="button" class="btn btn-dark">
+          <button type="button" class="btn btn-dark operation" data-operation="sub">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="op-symbol">
               <path fill-rule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
@@ -81,7 +81,7 @@
 
         </div>
         <div class="col-3 op">
-          <button type="button" class="btn btn-dark">
+          <button type="button" class="btn btn-dark operation" data-operation="mul">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="op-symbol">
               <path fill-rule="evenodd"
                 d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
@@ -92,7 +92,7 @@
 
         </div>
         <div class="col-3 op justify-content-end">
-          <button type="button" class="btn btn-dark">
+          <button type="button" class="btn btn-dark operation" data-operation="div">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="op-symbol">
               <path fill-rule="evenodd"
@@ -108,7 +108,7 @@
       <div class="row equal-container mt-4">
         <div class="col-12">
 
-          <button type="button" class="btn btn-secondary equal">
+          <button id="resBtn" type="button" class="btn btn-secondary equal">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="op-symbol">
               <path fill-rule="evenodd"
                 d="M3.748 8.248a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75ZM3.748 15.75a.75.75 0 0 1 .75-.751h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z"
@@ -121,7 +121,8 @@
       </div>
       <div class="row out-container mt-4">
         <div class="input-group mb-3 num-input">
-          <input type="number" class="form-control" placeholder="##" aria-label="output" aria-describedby="output">
+          <input type="text" id="op-holder" class="form-control" placeholder="##" aria-label="output" aria-describedby="output"
+            readonly>
         </div>
       </div>
     </div>
@@ -131,6 +132,8 @@
         alt="guy magnifying glass">
     </div>
   </div>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/calc.js"></script>
 
 </body>
 
