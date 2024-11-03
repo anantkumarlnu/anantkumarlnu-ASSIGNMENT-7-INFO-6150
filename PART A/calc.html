@@ -42,16 +42,24 @@
   <div class="main-container">
 
     <div class="calc-card">
+      <div class="row label-container">
+        <div class="col-6">
+          <label for="firstnumber">Number 1</label>
+        </div>
+        <div class="col-6">
+          <label for="secondnumber">Number 2</label>
+        </div>
+      </div>
       <div class="row num-container">
         <div class="col-6">
           <div class="input-group mb-3 num-input">
-            <input type="number" id="firstnumber" class="form-control" placeholder="#1" aria-label="firstnumber"
+            <input type="text" id="firstnumber" class="form-control" placeholder="Enter 1st Number" aria-label="firstnumber"
               aria-describedby="firstnumber">
           </div>
         </div>
         <div class="col-6">
           <div class="input-group mb-3 num-input">
-            <input type="number" id="secondnumber" class="form-control" placeholder="#2" aria-label="secondnumber"
+            <input type="text" id="secondnumber" class="form-control" placeholder="Enter 2nd Number" aria-label="secondnumber"
               aria-describedby="secondnumber">
           </div>
         </div>
@@ -120,8 +128,9 @@
 
       </div>
       <div class="row out-container mt-4">
-        <div class="input-group mb-3 num-input">
-          <input type="text" id="op-holder" class="form-control" placeholder="##" aria-label="output" aria-describedby="output"
+        <div class="input-group mb-3 ">
+          <input type="text" id="op-holder" class="form-control" placeholder="Result" aria-label="output"
+            aria-describedby="output"
             readonly>
         </div>
       </div>

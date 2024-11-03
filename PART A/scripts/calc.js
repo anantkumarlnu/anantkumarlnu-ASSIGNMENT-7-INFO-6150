@@ -9,12 +9,14 @@ $(document).ready(function () {
   // operation
   let selectedOperation = null;
   $(".operation").on("click", function () {
+    validateInput();
     $(".operation").removeClass("btn-secondary").addClass("btn-dark");
     $(this).removeClass("btn-dark").addClass("btn-secondary");
     selectedOperation = $(this).data("operation");
   });
 
   $("#resBtn").on("click", () => {
+    validateInput();
     const firstnumber = parseFloat($("#firstnumber").val());
     const secondnumber = parseFloat($("#secondnumber").val());
     let result;
@@ -40,4 +42,26 @@ $(document).ready(function () {
 
     $("#op-holder").val(result);
   });
+  function validateInput() {
+    $(".num-input input").each(function () {
+      const value = $(this).val();
+      let errorMessage = "";
+      if (value === "") {
+        errorMessage = "This field cannot be empty.";
+      } else if (!/^\d+$/.test(value)) {
+        errorMessage = "Only numeric values are allowed.";
+      } else if (!isFinite(value)) {
+        errorMessage = "Value cannot be infinite.";
+      }
+      $(this).next(".error-message").remove();
+      if (errorMessage) {
+        $(this).after(
+          `<small class="text-danger error-message row">${errorMessage}</small>`
+        );
+      }
+    });
+  }
+
+  $("#firstnumber, #secondnumber").on("input", validateInput);
+
 });
