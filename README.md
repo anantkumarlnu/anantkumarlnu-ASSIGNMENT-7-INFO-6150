@@ -25,18 +25,18 @@ Timer application that starts the 'star-wars' hyperspace when the timer is start
 Herosection has a still from the gif as the background image, the image is changed to the gif when the timer starts 
 
 - 	Async:
-- 	Async functions: The functions setBgGif, setBgImg, and updateStopWatch are defined as async, allowing me to use await within them.
+ - 	Async functions: The functions setBgGif, setBgImg, and updateStopWatch are defined as async, allowing me to use await within them.
 - 	Await:
-- 	await setBgGif(); in the #toStart button’s click event handler. This waits for the background change to the animated GIF to complete before starting the timer.
--	await updateStopWatch(); in the interval set by setInterval. This waits for the stopwatch update to complete.
-- 	await setBgImg(); in the #toStop and #toReset click event handlers. This waits for the background change back to the static image to complete before proceeding.
+ - 	await setBgGif(); in the #toStart button’s click event handler. This waits for the background change to the animated GIF to complete before starting the timer.
+ -	await updateStopWatch(); in the interval set by setInterval. This waits for the stopwatch update to complete.
+ - 	await setBgImg(); in the #toStop and #toReset click event handlers. This waits for the background change back to the static image to complete before proceeding.
 - 	Promises:
--	In setBgGif and setBgImg, each function returns a new Promise. This allows me to handle asynchronous behavior for the background change.
-- 	The resolve() in each of these functions ensures that they complete successfully, allowing the await keywords to function correctly.
+ -	In setBgGif and setBgImg, each function returns a new Promise. This allows me to handle asynchronous behavior for the background change.
+ - 	The resolve() in each of these functions ensures that they complete successfully, allowing the await keywords to function correctly.
 - 	Set Interval:
--   intervalId = setInterval(async () => { ... }, 1000); in the #toStart click event handler starts a timer that increments seconds and updates the display every second while the timer is running.
+ -   intervalId = setInterval(async () => { ... }, 1000); in the #toStart click event handler starts a timer that increments seconds and updates the display every second while the timer is running.
 - Clear Interval:
-- 	clearInterval(intervalId); in both #toStop and #toReset click event handlers. This stops the timer, preventing further increments to seconds when the timer is paused or reset.
+ - 	clearInterval(intervalId); in both #toStop and #toReset click event handlers. This stops the timer, preventing further increments to seconds when the timer is paused or reset.
 
 Date picker has been implemented, current date value is assigned to it and its default behaviour to change the date is getting prevented by using the preventDefault method
 
