@@ -38,7 +38,7 @@ Herosection has a still from the gif as the background image, the image is chang
 - Clear Interval:
  - 	clearInterval(intervalId); in both #toStop and #toReset click event handlers. This stops the timer, preventing further increments to seconds when the timer is paused or reset.
 
-Date picker has been implemented, current date value is assigned to it and its default behaviour to change the date is getting prevented by using the preventDefault method
+Date picker has been implemented, current date value is assigned to it and its default behaviour to change the date via keyboard is getting prevented by using the preventDefault method
 
 basic css also has been implemented
 
