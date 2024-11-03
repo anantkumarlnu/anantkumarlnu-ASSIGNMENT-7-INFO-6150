@@ -1,20 +1,12 @@
 $(document).ready(function () {
-  // fetching the username on load
-  const storedName = sessionStorage.getItem("username");
-  if (storedName) {
-    $("#usernameDisplay").text(storedName);
-  } else {
-    window.location.href = "index.html";
-  }
-
   function validateEmail() {
     const email = $("#email").val();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9](\.?[a-zA-Z0-9_%+-])*@northeastern\.edu$/;
     if (!email) {
-      showError("email", "Email cannot be empty");
+      showError("email", "Email address cannot be empty.");
       return false;
     } else if (!emailRegex.test(email)) {
-      showError("email", "Please enter a valid email");
+      showError("email", "Please enter a valid northeastern email address.");
       return false;
     }
     clearError("email");
@@ -22,12 +14,22 @@ $(document).ready(function () {
   }
 
   function validateUsername() {
+    const usernameRegex = /^[A-Za-z0-9_]+$/;
     const username = $("#username").val();
     if (!username) {
-      showError("username", "Username cannot be empty");
+      showError("username", "Username cannot be empty.");
+      return false;
+    } else if (!usernameRegex.test(username)) {
+      showError(
+        "username",
+        "Username can only have underscore, letters and numbers."
+      );
       return false;
     } else if (username.length < 3 || username.length > 15) {
-      showError("username", "Username must be between 3 and 15 characters");
+      if (username.length < 3)
+        showError("username", "Username should atleast be 3 characters.");
+      if (username.length > 15)
+        showError("username", "Username should not be more than 15 character.");
       return false;
     }
     clearError("username");
@@ -36,11 +38,23 @@ $(document).ready(function () {
 
   function validatePassword() {
     const password = $("#password").val();
+    const lengthRegex = /.{8,}/; 
+    const letterRegex = /[A-Za-z]/;
+    const numberRegex = /\d/;
     if (!password) {
-      showError("password", "Password cannot be empty");
+      showError("password", "Password cannot be empty.");
       return false;
-    } else if (password.length < 6 || password.length > 20) {
-      showError("password", "Password must be between 6 and 20 characters");
+    } else if (!lengthRegex.test(password)) {
+      showError("password", "Password must be at least 8 characters long.");
+      return false;
+    } else if (!letterRegex.test(password)) {
+      showError("password", "Password must contain at least one letter.");
+      return false;
+    } else if (!numberRegex.test(password)) {
+      showError("password", "Password must contain at least one number.");
+      return false;
+    } else if (password.length > 20) {
+      showError("password", "Password length must not be more than 20.");
       return false;
     }
     clearError("password");
@@ -51,7 +65,7 @@ $(document).ready(function () {
     const password = $("#password").val();
     const confirmPassword = $("#confirm_password").val();
     if (confirmPassword !== password) {
-      showError("confirm_password", "Passwords do not match");
+      showError("confirm_password", "Passwords do not match.");
       return false;
     }
     clearError("confirm_password");
@@ -88,6 +102,8 @@ $(document).ready(function () {
     const username = $("#username").val();
     if (username) {
       sessionStorage.setItem("username", username);
+      history.replaceState(null, null, window.location.href);
+      window.location.href = "calc.html";
     }
   });
 
