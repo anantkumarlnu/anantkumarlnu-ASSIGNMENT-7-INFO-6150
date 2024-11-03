@@ -1,20 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'VT323' !important;
+body {
+  font-family: "VT323" !important;
   color: #fff !important;
 }
 
-h1{
-  font-size: 100px !important;
+label {
+  font-size: 200px !important;
 }
 
 .hero-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(resources/Kdxm.gif);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(resources/ezgif-3-3a65e7e0d9-gif-im/frame_00_delay-0.04s.gif);
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -22,4 +23,12 @@ h1{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 40px;
+}
+
+button {
+  font-size: 50px !important;
+}
+button:not(:last-child) {
+  margin-right: 30px;
 }

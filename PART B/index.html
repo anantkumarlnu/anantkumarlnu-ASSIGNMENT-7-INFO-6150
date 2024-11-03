@@ -21,17 +21,20 @@
 </head>
 
 <body>
-  <div class="hero-container">
+  <div class="hero-container" id="hero-banner">
     <div class="timer-container">
-      <h1>00:00:00</h1>
+      <label id="timer">00:00:00</label>
     </div>
     <div class="timer-control-container">
-      <button type="button" class="btn btn-primary">START</button>
-      <button type="button" class="btn btn-primary">STOP</button>
-      <button type="button" class="btn btn-primary">RESET</button>
-
+      <button type="button" id="toStart" class="btn btn-secondary">START</button>
+      <button type="button" id="toStop" class="btn btn-secondary">STOP</button>
+      <button type="button" id="toReset" class="btn btn-secondary">RESET</button>
+      </div>
+      <div class="date-picker-container">
+        <input type="date" id="daterPicker" class="form-control">
     </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
